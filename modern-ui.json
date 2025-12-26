@@ -1,0 +1,30 @@
+{
+  "style": "default",
+  "path": "src/components/modern-ui",
+  "theme": "default",
+  "typescript": true,
+  "tailwind": true,
+  "framework": "vite",
+  "components": [
+    {
+      "name": "sonner",
+      "version": "latest",
+      "installedAt": "2025-12-16T12:21:20.685Z"
+    },
+    {
+      "name": "input",
+      "version": "latest",
+      "installedAt": "2025-12-16T12:28:08.256Z"
+    },
+    {
+      "name": "rich-text-editor",
+      "version": "latest",
+      "installedAt": "2025-12-18T17:10:21.347Z"
+    }
+  ],
+  "aliases": {
+    "cn": "@/lib/utils",
+    "hook": "@/hooks"
+  },
+  "tailwindVersion": "v4"
+}
