@@ -2,7 +2,7 @@ import { searchBook } from "@/utils/request";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 
-export default function useSearch(query: any) {
+export default function useSearch(query: string) {
   const {
     data: searchResults,
     isLoading: searchLoading,
@@ -18,5 +18,5 @@ export default function useSearch(query: any) {
       console.log("Fetched results:", searchResults);
     }
   }, [searchResults]);
-  return { searchResults, searchLoading, noResults };
+  return { searchResults: searchResults ?? [], searchLoading, noResults };
 }

@@ -1,10 +1,7 @@
 import { getBookDetails } from "@/utils/request";
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
 
-export default function useBookDetails(id: any) {
-  const [bookDetails, setBookDetails] = useState();
-
+export default function useBookDetails(id: number | string) {
   const {
     data: fetchedDetails,
     isLoading: detailsLoading,
@@ -15,15 +12,9 @@ export default function useBookDetails(id: any) {
     queryFn: () => getBookDetails(id),
   });
 
-  useEffect(() => {
-    if (fetchedDetails) {
-      setBookDetails(fetchedDetails);
-    }
-  }, [fetchedDetails]);
   return {
     detailsLoading,
     noDetails,
-    // bookDetails,
     fetchedDetails,
   };
 }

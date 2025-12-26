@@ -13,7 +13,7 @@ const BookDetails = () => {
   const { addTofavourites, favourites, removeFromFavourites, isFavourite } =
     useFavourites();
 
-  const bookId = id ? Number(id) : undefined;
+  const bookId = Number(id);
   const { fetchedDetails, detailsLoading, noDetails } = useBookDetails(bookId);
 
   if (detailsLoading) {

@@ -9,8 +9,8 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
 const SearchPage = () => {
-  const [searchQuery, setSearchQuery] = useState<string>();
-  const [debouncedQuery, setBouncedQuery] = useState<string>();
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [debouncedQuery, setBouncedQuery] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,7 +31,6 @@ const SearchPage = () => {
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center border pt-24 px-4 md:px-10 lg:px-20">
-      {/* Back to Home Button */}
       <div className="w-full max-w-3xl mb-6">
         <Button onClick={() => navigate("/books")}>
           <ChevronLeft className="w-4 h-4" />
@@ -39,7 +38,6 @@ const SearchPage = () => {
         </Button>
       </div>
 
-      {/* Search Bar */}
       <div className="relative w-full mb-12">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
         <Input

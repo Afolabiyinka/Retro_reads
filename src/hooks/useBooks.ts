@@ -6,7 +6,7 @@ import { useSearchParams } from "react-router-dom";
 export default function useBooks() {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialPage = Number(searchParams.get("page")) || 1;
-  const [currentPage, setCurrentPage] = useState<any>(initialPage);
+  const [currentPage, setCurrentPage] = useState<number>(initialPage);
 
   const handlePrevPage = () =>
     setCurrentPage((prev: number) => Math.max(prev - 1, 1));
@@ -23,7 +23,7 @@ export default function useBooks() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    setSearchParams({ page: currentPage });
+    setSearchParams({ page: currentPage.toString() });
   }, [currentPage, setSearchParams]);
 
   return {

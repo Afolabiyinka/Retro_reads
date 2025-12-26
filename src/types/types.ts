@@ -3,7 +3,9 @@ export type BookType = {
   summaries: [];
   download_count: number;
   bookshelves: [];
-  formats: any;
+  formats: {
+    [key: string]: string;
+  };
   id: number;
   authors: [
     {
