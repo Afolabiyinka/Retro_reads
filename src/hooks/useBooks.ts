@@ -29,7 +29,7 @@ export default function useBooks() {
   return {
     isLoading,
     error,
-    books,
+    books: books ?? [],
     currentPage,
     handleNextPage,
     handlePrevPage,
