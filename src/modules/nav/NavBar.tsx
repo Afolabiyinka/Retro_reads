@@ -1,9 +1,12 @@
 import React from "react";
-import { Book, Search, Bookmark } from "lucide-react";
+import { Book } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { NAVICONS } from "@/libs/nav";
+import { useLocation } from "react-router-dom";
 
 const NavBar = () => {
+  const location = useLocation();
   return (
     <nav className="w-full p-3 flex justify-between items-center shadow fixed z-50 bg-white">
       {/* Logo Section */}
@@ -16,24 +19,18 @@ const NavBar = () => {
         </div>
       </Link>
 
-      <Link className="md:text-xl cursor-pointer" to={`/books`}>
-        Books
-      </Link>
       {/* Action Buttons */}
       <div className="flex items-center gap-3">
-        {/* Search Button */}
-        <Link to={`/search`}>
-          <Button className="rounded-full" variant={`outline`}>
-            <Search />
-          </Button>
-        </Link>
-
-        {/* Favorites Button */}
-        <Link to={`/favourites`}>
-          <Button className="rounded-full">
-            <Bookmark />
-          </Button>
-        </Link>
+        {NAVICONS.map(({ path, icon: Icon }) => (
+          <Link to={path}>
+            <Button
+              className="rounded-full"
+              variant={`${location.pathname === path ? "default" : "outline"}`}
+            >
+              <Icon />
+            </Button>
+          </Link>
+        ))}
       </div>
     </nav>
   );

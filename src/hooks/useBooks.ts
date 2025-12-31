@@ -17,7 +17,7 @@ export default function useBooks() {
     isLoading,
     error,
   } = useQuery({
-    queryKey: ["books", currentPage],
+    queryKey: ["books"],
     queryFn: () => getBooks(currentPage),
   });
 
