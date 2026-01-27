@@ -22,8 +22,7 @@ const Books = () => {
       ) : error ? (
         <div className="h-screen w-full  flex items-center gap-3   flex-col justify-center">
           <Frown size={200} className="stroke-[0.5px]" />
-          <h1 className="text-2xl md:text-5xl">
-            {" "}
+          <h1 className="text-2xl md:text-5xl max-w-xl text-center font-light">
             Failed to connect to our servers
           </h1>
         </div>

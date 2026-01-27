@@ -12,10 +12,10 @@ const BookCard = ({ book }: BookCardProps) => {
 
   return (
     <motion.div
-      whileHover={{ y: -10 }}
+      whileHover={{ y: -2 }}
       whileTap={{ scale: 0.95 }}
       transition={{ duration: 0.3 }}
-      className="border w-full overflow-hidden cursor-pointer rounded-lg duration-700 hover:shadow-lg"
+      className="border w-full overflow-hidden cursor-pointer rounded-none hover:shadow-lg"
       onClick={() => navigate(`/book/${book.id}`)}
     >
       <img
@@ -25,7 +25,7 @@ const BookCard = ({ book }: BookCardProps) => {
       />
 
       <div className="p-4">
-        <p className="text-lg font-semibold font-[Lora] tracking-wide truncate">
+        <p className="text-lg font-semibold  tracking-wide truncate">
           {book.title}
         </p>
         <p className="text-sm text-gray-500 truncate">

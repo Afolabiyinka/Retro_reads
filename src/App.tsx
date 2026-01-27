@@ -1,10 +1,10 @@
-import RoutesConfig from "./config/routes-module";
+import RoutesConfig from "./routes/routes-module";
 
 function App() {
   return (
-    <>
+    <div className="font-[Google_Sans]">
       <RoutesConfig />
-    </>
+    </div>
   );
 }
 

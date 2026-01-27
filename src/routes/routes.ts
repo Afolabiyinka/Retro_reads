@@ -1,11 +1,11 @@
-import BookDetails from "@/modules/books/BookDetails";
-import Books from "@/modules/books/Books";
-import Layout from "@/modules/Layout";
-import Notfound from "@/modules/app/Notfound";
-import SearchPage from "@/modules/search/SearchPage";
+import BookDetails from "@/pages/books/BookDetails";
+import Books from "@/pages/books/Books";
+import Layout from "@/pages/Layout";
+import Notfound from "@/pages/app/Notfound";
+import SearchPage from "@/pages/search/SearchPage";
 import type { RouteObject } from "react-router-dom";
-import Home from "@/modules/app/Home";
-import Favourites from "@/modules/favourites/Favourites";
+import Home from "@/pages/app/Home";
+import Favourites from "@/pages/favourites/Favourites";
 
 export const routes: RouteObject[] = [
   {

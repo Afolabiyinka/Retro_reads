@@ -13,7 +13,7 @@ const NavBar = () => {
       <Link to={`/`}>
         <div className="flex items-center p-2 gap-3 rounded-xl cursor-pointer">
           <Book />
-          <h1 className="text-xl font-extrabold capitalize font-[Lora] tracking-widest">
+          <h1 className="text-xl font-extrabold capitalize  tracking-widest">
             RetroReads
           </h1>
         </div>
@@ -24,7 +24,8 @@ const NavBar = () => {
         {NAVICONS.map(({ path, icon: Icon }) => (
           <Link to={path}>
             <Button
-              className="rounded-full"
+              size={`icon-lg`}
+              className="rounded-full stroke-[5px]"
               variant={`${location.pathname === path ? "default" : "outline"}`}
             >
               <Icon />
