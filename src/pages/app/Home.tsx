@@ -21,7 +21,9 @@ const Home = () => {
         <p className="text-lg md:text-2xl mb-8 max-w-md mx-auto lg:mx-0 text-gray-700">
           Explore thousands of old books for free. Read anywhere, anytime.
         </p>
-        <Button onClick={() => navigate("/books")}>Browse Books</Button>
+        <Button size={`lg`} onClick={() => navigate("/books")}>
+          Browse Books
+        </Button>
       </motion.div>
 
       {/* Image Section */}
