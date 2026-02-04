@@ -27,7 +27,7 @@ const NavBar = () => {
               className="rounded-full stroke-[5px]"
               variant={`${location.pathname === path ? "default" : "outline"}`}
             >
-              <Icon />
+              <Icon size={40} />
             </Button>
           </Link>
         ))}
