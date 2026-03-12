@@ -16,6 +16,7 @@ export default function useBooks() {
     data: books,
     isLoading,
     error,
+    refetch
   } = useQuery({
     queryKey: ["books"],
     queryFn: () => getBooks(currentPage),
@@ -28,6 +29,7 @@ export default function useBooks() {
 
   return {
     isLoading,
+    refetch,
     error,
     books: books,
     currentPage,

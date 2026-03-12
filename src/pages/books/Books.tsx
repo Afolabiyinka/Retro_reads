@@ -3,7 +3,8 @@ import type { BookType } from "@/types/types";
 import useBooks from "@/hooks/useBooks";
 import LoadingContainer from "@/components/loading/loadingContainer";
 import Pagination from "@/components/ui/pagination";
-import { Frown } from "lucide-react";
+import { Frown, RefreshCcw } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Books = () => {
   const {
@@ -13,6 +14,7 @@ const Books = () => {
     currentPage,
     handleNextPage,
     handlePrevPage,
+    refetch,
   } = useBooks();
 
   if (isLoading) {
@@ -26,6 +28,10 @@ const Books = () => {
         <h1 className="text-2xl md:text-5xl max-w-xl text-center font-light">
           Failed to connect to our servers
         </h1>
+        <Button size={`lg`} onClick={() => refetch()}>
+          <RefreshCcw />
+          Retry
+        </Button>
       </div>
     );
   }
