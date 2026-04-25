@@ -12,24 +12,33 @@ const BookCard = ({ book }: BookCardProps) => {
 
   return (
     <motion.div
-      whileHover={{ y: -2 }}
-      whileTap={{ scale: 0.95 }}
-      transition={{ duration: 0.3 }}
-      className="border w-full overflow-hidden cursor-pointer rounded-none hover:shadow-lg"
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.2 }}
+      className="border border-faded cursor-pointer font-serif p-3"
       onClick={() => navigate(`/book/${book.id}`)}
     >
-      <img
-        src={coverUrl}
-        alt={`Cover of ${book.title}`}
-        className="w-full h-72 object-cover"
-      />
+      {/* Image Frame */}
+      <div className="p-2  mb-3">
+        <img
+          src={coverUrl}
+          alt={`Cover of ${book.title}`}
+          className="w-full h-72 object-cover"
+        />
+      </div>
 
-      <div className="p-4">
-        <p className="text-lg font-semibold  tracking-wide truncate">
+      {/* Metadata */}
+      <div className="space-y-1">
+        <p className="text-md tracking-wide truncate">
           {book.title}
         </p>
-        <p className="text-sm text-gray-500 truncate">
-          {book.authors[0]?.name}
+
+        <p className="text-sm italic text-aged truncate">
+          {book.authors[0]?.name || "Unknown Author"}
+        </p>
+
+        {/* Extra archive detail */}
+        <p className="text-xs text-faded">
+          Record #{book.id}
         </p>
       </div>
     </motion.div>

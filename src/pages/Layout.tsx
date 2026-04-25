@@ -3,7 +3,7 @@ import NavBar from "./nav/NavBar";
 
 const Layout = () => {
   return (
-    <div>
+    <div className="flex justify-center">
       <NavBar />
       <Outlet />
     </div>
