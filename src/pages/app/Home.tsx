@@ -8,7 +8,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen w-full bg-parchment text-ink flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 py-12 border border-faded">
+    <div className="min-h-screen w-full bg-parchment text-ink flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 py-12 border border-faded pt-30 ">
 
       {/* Text Section */}
       <motion.div
