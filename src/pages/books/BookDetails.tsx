@@ -4,6 +4,7 @@ import useBookDetails from "@/hooks/useBookdetails";
 import { useFavourites } from "@/hooks/useFavourites";
 import { toast, Toaster } from "sonner";
 import { Button } from "@/components/ui/button";
+import { Loader } from "lucide-react";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -19,7 +20,7 @@ const BookDetails = () => {
   if (detailsLoading) {
     return (
       <div className="h-screen flex items-center justify-center font-serif italic text-aged">
-        Retrieving manuscript...
+        <Loader className="animate-spin" />
       </div>
     );
   }
@@ -61,11 +62,12 @@ const BookDetails = () => {
       <div className="max-w-5xl mx-auto border border-faded p-6">
 
         {/* Header */}
-        <div className="flex justify-between items-center border-b border-faded pb-3 mb-6">
+        <div className="flex  flex-col md:flex-row justify-between items-center border-b border-faded pb-3 mb-6">
           <Button
             variant={`outline`}
+            size={`lg`}
             onClick={() => navigate(-1)}
-            className="border border-aged  hover:bg-aged hover:text-parchment transition"
+          // className="border border-aged  hover:bg-aged hover:text-parchment transition"
           >
             ← Return
           </Button>
@@ -127,20 +129,24 @@ const BookDetails = () => {
             </div>
 
             {/* Actions */}
-            <div className="flex gap-4 mt-8">
+            <div className="flex flex-col md:flex-row items-center mt-8">
 
               <a href={bookUrl} target="_blank" className="flex-1">
-                <button className="w-full border border-aged px-4 py-2 hover:bg-aged hover:text-parchment transition">
+                <Button
+                  variant={`outline`}
+                  size={`lg`}
+
+                >
                   Read Manuscript →
-                </button>
+                </Button>
               </a>
 
-              <button
+              <Button
                 onClick={handleFavouriteClick}
-                className="border border-aged px-4 py-2 hover:bg-aged hover:text-parchment transition"
+              // className="border border-aged px-4 py-2 hover:bg-aged hover:text-parchment transition"
               >
                 {bookInFavorites ? "Remove" : "Save"}
-              </button>
+              </Button>
             </div>
           </div>
         </div>

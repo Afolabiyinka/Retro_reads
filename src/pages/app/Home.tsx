@@ -28,7 +28,7 @@ const Home = () => {
         <Button
           size={`lg`}
           variant={`outline`}
-          className="border border-aged font-serif hover:bg-aged hover:text-parchment transition duration-300"
+          className="border border-aged font-serif hover:bg-primary hover:text-white transition duration-300"
 
           onClick={() => navigate("/books")}
 
