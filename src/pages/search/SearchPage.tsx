@@ -33,7 +33,7 @@ const SearchPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-parchment text-ink font-serif px-6 pt-24">
+    <div className="min-h-screen w-full text-ink font-serif px-6 pt-24">
 
       {/* Header */}
       <div className="max-w-4xl mx-auto mb-10 border-b border-faded pb-4">
@@ -67,23 +67,20 @@ const SearchPage = () => {
       </div>
 
       {/* Results */}
-      <div className="max-w-6xl mx-auto">
-
-        {searchLoading ? (
-          <div className="text-center italic text-faded">
-            Searching records...
-          </div>
-        ) : searchResults?.length > 0 ? (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 border border-faded p-6 bg-[#efe6d1]">
-            {searchResults.map((book: BookType) => (
-              <BookCard key={book.id} book={book} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center text-faded italic py-20">
-            No matching records found
-          </div>
-        )}
+      <div className="max-w-6xl mx-auto w-full">        {searchLoading ? (
+        <div className="text-center italic text-faded">
+          Searching records...
+        </div>
+      ) : searchResults?.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 border border-faded p-6 w-full">          {searchResults.map((book: BookType) => (
+          <BookCard key={book.id} book={book} />
+        ))}
+        </div>
+      ) : (
+        <div className="text-center text-faded italic py-20">
+          No matching records found
+        </div>
+      )}
       </div>
     </div>
   );

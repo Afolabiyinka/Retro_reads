@@ -2,6 +2,7 @@ import BookCard from "@/components/books/BookCard";
 import type { BookType } from "@/types/types";
 import useBooks from "@/hooks/useBooks";
 import Pagination from "@/components/ui/pagination";
+import Loader from "@/components/loading/Loader";
 
 const Books = () => {
   const {
@@ -16,7 +17,9 @@ const Books = () => {
 
   if (isLoading) {
     return (
-      <div className="h-screen flex items-center justify-center font-serif italic text-aged">
+      <div className="h-screen flex flex-col  gap-10 items-center justify-center font-serif italic text-aged">
+        <Loader />
+
         Accessing archive records...
       </div>
     );

@@ -4,7 +4,8 @@ import useBookDetails from "@/hooks/useBookdetails";
 import { useFavourites } from "@/hooks/useFavourites";
 import { toast, Toaster } from "sonner";
 import { Button } from "@/components/ui/button";
-import { Loader } from "lucide-react";
+import { Bookmark, HeartOff } from "lucide-react";
+import Loader from "@/components/loading/Loader";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const BookDetails = () => {
   if (detailsLoading) {
     return (
       <div className="h-screen flex items-center justify-center font-serif italic text-aged">
-        <Loader className="animate-spin" />
+        <Loader />
       </div>
     );
   }
@@ -67,7 +68,6 @@ const BookDetails = () => {
             variant={`outline`}
             size={`lg`}
             onClick={() => navigate(-1)}
-          // className="border border-aged  hover:bg-aged hover:text-parchment transition"
           >
             ← Return
           </Button>
@@ -129,22 +129,25 @@ const BookDetails = () => {
             </div>
 
             {/* Actions */}
-            <div className="flex flex-col md:flex-row items-center mt-8">
+            <div className="flex flex-col md:flex-row items-center gap-3 mt-8">
 
-              <a href={bookUrl} target="_blank" className="flex-1">
+              <a href={bookUrl} target="_blank" className="">
                 <Button
-                  variant={`outline`}
+                  variant={`secondary`}
+                  className="border"
                   size={`lg`}
 
                 >
-                  Read Manuscript →
+                  Read Book →
                 </Button>
               </a>
 
               <Button
+                size={`lg`}
                 onClick={handleFavouriteClick}
-              // className="border border-aged px-4 py-2 hover:bg-aged hover:text-parchment transition"
+              // className="w-full"
               >
+                {bookInFavorites ? <HeartOff /> : <Bookmark />}
                 {bookInFavorites ? "Remove" : "Save"}
               </Button>
             </div>

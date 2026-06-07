@@ -14,7 +14,7 @@ const BookCard = ({ book }: BookCardProps) => {
     <motion.div
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.2 }}
-      className="border border-faded cursor-pointer font-serif p-3"
+      className="border border-faded cursor-pointer font-serif p-3 flex flex-col h-full w-full"
       onClick={() => navigate(`/book/${book.id}`)}
     >
       {/* Image Frame */}
