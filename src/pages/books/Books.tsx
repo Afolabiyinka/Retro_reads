@@ -3,6 +3,7 @@ import type { BookType } from "@/types/types";
 import useBooks from "@/hooks/useBooks";
 import Pagination from "@/components/ui/pagination";
 import Loader from "@/components/loading/Loader";
+import { Button } from "@/components/ui/button";
 
 const Books = () => {
   const {
@@ -19,7 +20,6 @@ const Books = () => {
     return (
       <div className="h-screen flex flex-col  gap-10 items-center justify-center font-serif italic text-aged">
         <Loader />
-
         Accessing archive records...
       </div>
     );
@@ -27,33 +27,25 @@ const Books = () => {
 
   if (error) {
     return (
-      <div className="h-screen flex flex-col items-center justify-center font-serif text-center border border-faded bg-parchment p-6">
-        <h1 className="text-2xl md:text-4xl mb-4">
-          Archive Connection Failed
-        </h1>
+      <div className="h-screen w-full flex flex-col items-center justify-center font-serif text-center border border-faded bg-parchment p-6">
+        <h1 className="text-2xl md:text-4xl mb-4">Archive Connection Failed</h1>
 
         <p className="text-sm text-faded italic mb-6">
           Unable to retrieve manuscripts at this time.
         </p>
 
-        <button
-          onClick={() => refetch()}
-          className="border border-aged px-5 py-2 hover:bg-aged hover:text-parchment transition"
-        >
+        <Button onClick={() => refetch()} size={`lg`}>
           Retry Access
-        </button>
+        </Button>
       </div>
     );
   }
 
   return (
     <div className="w-full md:w-[85%] mx-auto mt-24 font-serif">
-
       {/* Page Header */}
       <div className="mb-10 border-b border-faded pb-4 text-center">
-        <h1 className="text-3xl md:text-5xl tracking-wide">
-          Archive Catalog
-        </h1>
+        <h1 className="text-3xl md:text-5xl tracking-wide">Archive Catalog</h1>
         <p className="text-sm text-faded italic mt-2">
           Collection of preserved literary works
         </p>

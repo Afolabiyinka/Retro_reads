@@ -8,10 +8,8 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full fixed top-0 z-50 bg-white border-b border-faded px-4 md:px-6 py-3 font-serif">
-
+    <nav className="w-full fixed top-0 z-50 px-4 md:px-10 py-6 font-serif">
       <div className="flex justify-between items-center">
-
         {/* Logo */}
         <Link to={`/`}>
           <div className="flex items-center gap-2 md:gap-3 cursor-pointer">
@@ -30,15 +28,14 @@ const NavBar = () => {
             return (
               <Link key={path} to={path}>
                 <div
-                  className={`flex items-center gap-2 px-3 py-1 border transition ${isActive
+                  className={`flex items-center gap-2 px-3 py-1 border transition rounded-full ${
+                    isActive
                       ? "border-aged text-aged"
                       : "border-transparent hover:border-faded"
-                    }`}
+                  }`}
                 >
                   <Icon size={16} />
-                  <span className="uppercase tracking-wide">
-                    {label}
-                  </span>
+                  <span className="uppercase tracking-wide">{label}</span>
                 </div>
               </Link>
             );
@@ -63,15 +60,12 @@ const NavBar = () => {
             return (
               <Link key={path} to={path} onClick={() => setOpen(false)}>
                 <div
-                  className={`flex items-center gap-2 px-3 py-2 border ${isActive
-                      ? "border-aged text-aged"
-                      : "border-transparent"
-                    }`}
+                  className={`flex items-center gap-2 px-3 py-2 border rounded-full ${
+                    isActive ? "border-aged text-aged" : "border-transparent"
+                  }`}
                 >
                   <Icon size={16} />
-                  <span className="uppercase tracking-wide">
-                    {label}
-                  </span>
+                  <span className="uppercase tracking-wide">{label}</span>
                 </div>
               </Link>
             );

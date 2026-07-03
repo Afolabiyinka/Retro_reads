@@ -21,8 +21,7 @@ const SearchPage = () => {
     return () => clearTimeout(timeoutId);
   }, [searchQuery]);
 
-  const { searchLoading, noResults, searchResults } =
-    useSearch(debouncedQuery);
+  const { searchLoading, noResults, searchResults } = useSearch(debouncedQuery);
 
   if (noResults) {
     return (
@@ -34,10 +33,8 @@ const SearchPage = () => {
 
   return (
     <div className="min-h-screen w-full text-ink font-serif px-6 pt-24">
-
       {/* Header */}
-      <div className="max-w-4xl mx-auto mb-10 border-b border-faded pb-4">
-
+      <div className="max-w-md mx-auto mb-10 border-b border-faded pb-4">
         <Button
           onClick={() => navigate("/books")}
           className="border border-aged bg-transparent hover:bg-aged hover:text-parchment rounded-none mb-6"
@@ -45,9 +42,7 @@ const SearchPage = () => {
           ← Return to Archive
         </Button>
 
-        <h1 className="text-3xl md:text-5xl tracking-wide">
-          Archive Search
-        </h1>
+        <h1 className="text-3xl md:text-5xl tracking-wide">Archive Search</h1>
 
         <p className="text-sm text-faded italic mt-2">
           Query the literary database
@@ -55,7 +50,7 @@ const SearchPage = () => {
       </div>
 
       {/* Search Input */}
-      <div className="max-w-4xl mx-auto mb-12 relative">
+      <div className="max-w-md mx-auto mb-12 relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-faded" />
 
         <Input
@@ -67,20 +62,24 @@ const SearchPage = () => {
       </div>
 
       {/* Results */}
-      <div className="max-w-6xl mx-auto w-full">        {searchLoading ? (
-        <div className="text-center italic text-faded">
-          Searching records...
-        </div>
-      ) : searchResults?.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 border border-faded p-6 w-full">          {searchResults.map((book: BookType) => (
-          <BookCard key={book.id} book={book} />
-        ))}
-        </div>
-      ) : (
-        <div className="text-center text-faded italic py-20">
-          No matching records found
-        </div>
-      )}
+      <div className="max-w-6xl mx-auto w-full">
+        {" "}
+        {searchLoading ? (
+          <div className="text-center italic text-faded">
+            Searching records...
+          </div>
+        ) : searchResults?.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 border border-faded p-6 w-full">
+            {" "}
+            {searchResults.map((book: BookType) => (
+              <BookCard key={book.id} book={book} />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center text-faded italic py-20">
+            No matching records found
+          </div>
+        )}
       </div>
     </div>
   );

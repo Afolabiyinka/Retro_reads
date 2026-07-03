@@ -11,10 +11,10 @@ const Notfound = () => {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="h-screen w-screen flex flex-col gap-6 justify-center items-center p-3"
+      className="h-screen w-full flex flex-col gap-6 justify-center items-center p-3"
     >
-      <h1 className="text-5xl font-bold">404</h1>
-      <h1 className="text-5xl font-bold text-gray-800">Not found!</h1>
+      <h1 className="text-7xl font-extrabold">404</h1>
+      <h1 className="text-4xl font-bold text-gray-800">Not found!</h1>
       <p className="flex items-center gap-3 font-semibold md:text-xl tracking-wide truncate">
         The link is broken or does'nt exist
       </p>
