@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import useSearch from "@/hooks/useSearch";
-import LoadingContainer from "@/components/loading/loadingContainer";
 import { BookType } from "@/types/types";
 import BookCard from "@/components/books/BookCard";
-import { ChevronLeft, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { Input } from "@/components/modern-ui/input";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
+import Loader from "@/components/loading/Loader";
 
 const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -51,14 +55,18 @@ const SearchPage = () => {
 
       {/* Search Input */}
       <div className="max-w-md mx-auto mb-12 relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-faded" />
+        {/* <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-faded" /> */}
 
-        <Input
-          placeholder="Search archive records..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="pl-10 border border-faded font-serif rounded-none focus:ring-0 focus:border-aged"
-        />
+        <InputGroup>
+          <InputGroupAddon>
+            <Search />
+          </InputGroupAddon>
+          <InputGroupInput
+            placeholder="Search archive records..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </InputGroup>
       </div>
 
       {/* Results */}
@@ -66,7 +74,7 @@ const SearchPage = () => {
         {" "}
         {searchLoading ? (
           <div className="text-center italic text-faded">
-            Searching records...
+            <Loader />
           </div>
         ) : searchResults?.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 border border-faded p-6 w-full">

@@ -28,10 +28,12 @@ const Books = () => {
   if (error) {
     return (
       <div className="h-screen w-full flex flex-col items-center justify-center font-serif text-center border border-faded bg-parchment p-6">
-        <h1 className="text-2xl md:text-4xl mb-4">Archive Connection Failed</h1>
+        <h1 className="text-2xl md:text-4xl mb-4 text-destructive">
+          Archive Connection Failed
+        </h1>
 
         <p className="text-sm text-faded italic mb-6">
-          Unable to retrieve manuscripts at this time.
+          Unable to retrieve manuscripts at this time
         </p>
 
         <Button onClick={() => refetch()} size={`lg`}>

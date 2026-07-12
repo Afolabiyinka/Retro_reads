@@ -14,7 +14,7 @@ const BookCard = ({ book }: BookCardProps) => {
     <motion.div
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.2 }}
-      className="border border-faded cursor-pointer font-serif p-3 flex flex-col h-full w-full"
+      className=" cursor-pointer rounded-xl overflow-hidden font-serif  flex flex-col h-full w-full"
       onClick={() => navigate(`/book/${book.id}`)}
     >
       {/* Image Frame */}
@@ -22,13 +22,13 @@ const BookCard = ({ book }: BookCardProps) => {
         <img
           src={coverUrl}
           alt={`Cover of ${book.title}`}
-          className="w-full h-72 object-cover"
+          className="w-full h-72 object-cover rounded-tl-lg rounded-tr-lg"
         />
       </div>
 
       {/* Metadata */}
       <div className="space-y-1">
-        <p className="text-md tracking-wide truncate">
+        <p className="text-md tracking-wide truncate font-semibold">
           {book.title}
         </p>
 
@@ -37,9 +37,7 @@ const BookCard = ({ book }: BookCardProps) => {
         </p>
 
         {/* Extra archive detail */}
-        <p className="text-xs text-faded">
-          Record #{book.id}
-        </p>
+        <p className="text-xs text-faded">Record #{book.id}</p>
       </div>
     </motion.div>
   );

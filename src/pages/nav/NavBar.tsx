@@ -8,7 +8,7 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full fixed top-0 z-50 px-4 md:px-10 py-6 font-serif">
+    <nav className="w-full fixed top-0 z-50 px-4 md:px-10 py-6 font-serif bg-white">
       <div className="flex justify-between items-center">
         {/* Logo */}
         <Link to={`/`}>

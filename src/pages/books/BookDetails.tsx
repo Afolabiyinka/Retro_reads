@@ -15,8 +15,7 @@ const BookDetails = () => {
     useFavourites();
 
   const bookId = Number(id);
-  const { fetchedDetails, detailsLoading, noDetails } =
-    useBookDetails(bookId);
+  const { fetchedDetails, detailsLoading, noDetails } = useBookDetails(bookId);
 
   if (detailsLoading) {
     return (
@@ -59,13 +58,11 @@ const BookDetails = () => {
 
   return (
     <div className="min-h-screen bg-parchment text-ink font-serif p-6 mt-12">
-
-      <div className="max-w-5xl mx-auto border border-faded p-6">
-
+      <div className="max-w-5xl mx-auto  p-6">
         {/* Header */}
         <div className="flex  flex-col md:flex-row justify-between items-center border-b border-faded pb-3 mb-6">
           <Button
-            variant={`outline`}
+            variant={`secondary`}
             size={`lg`}
             onClick={() => navigate(-1)}
           >
@@ -79,9 +76,8 @@ const BookDetails = () => {
 
         {/* Layout */}
         <div className="grid md:grid-cols-2 gap-8">
-
           {/* Image */}
-          <div className="border border-faded p-3 bg-parchment">
+          <div className=" p-3 bg-parchment">
             <img
               src={coverUrl || "/fallback-book.png"}
               alt={book.title}
@@ -107,10 +103,7 @@ const BookDetails = () => {
 
               <div className="flex flex-wrap gap-2">
                 {book.bookshelves.map((cat: string) => (
-                  <span
-                    key={cat}
-                    className="border border-faded px-2 py-1 text-xs"
-                  >
+                  <span key={cat} className=" px-2 py-1 text-xs">
                     {cat}
                   </span>
                 ))}
@@ -130,14 +123,8 @@ const BookDetails = () => {
 
             {/* Actions */}
             <div className="flex flex-col md:flex-row items-center gap-3 mt-8">
-
               <a href={bookUrl} target="_blank" className="">
-                <Button
-                  variant={`secondary`}
-                  className="border"
-                  size={`lg`}
-
-                >
+                <Button variant={`secondary`} className="border" size={`lg`}>
                   Read Book →
                 </Button>
               </a>
@@ -145,7 +132,7 @@ const BookDetails = () => {
               <Button
                 size={`lg`}
                 onClick={handleFavouriteClick}
-              // className="w-full"
+                className="w-full md:w-fit"
               >
                 {bookInFavorites ? <HeartOff /> : <Bookmark />}
                 {bookInFavorites ? "Remove" : "Save"}

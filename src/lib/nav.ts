@@ -1,4 +1,4 @@
-import { Archive, Bookmark, House, Search } from "lucide-react";
+import { Bookmark, House, Library, Search } from "lucide-react";
 
 const NAVICONS = [
   {
@@ -8,8 +8,8 @@ const NAVICONS = [
   },
   {
     path: "/books",
-    icon: Archive,
-    label: "Archive",
+    icon: Library,
+    label: "Library",
   },
   {
     path: "/search",
