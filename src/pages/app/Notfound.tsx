@@ -18,7 +18,7 @@ const Notfound = () => {
       <p className="flex items-center gap-3 font-semibold md:text-xl tracking-wide truncate">
         The link is broken or does'nt exist
       </p>
-      <Button onClick={() => navigate(-1)} size={`lg`}>
+      <Button onClick={() => navigate("/")} size={`lg`}>
         <ArrowLeft className="w-4 h-4" />
         Go back
       </Button>

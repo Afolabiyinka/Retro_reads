@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Book, Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { NAVICONS } from "@/lib/nav";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 const NavBar = () => {
-  const location = useLocation();
   const [open, setOpen] = useState(false);
 
   return (
@@ -21,55 +22,80 @@ const NavBar = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-6 text-sm">
-          {NAVICONS.map(({ path, icon: Icon, label }) => {
-            const isActive = location.pathname === path;
+        <div className="hidden md:flex items-center gap-1 text-sm">
+          {NAVICONS.map(({ icon: Icon, label, path }) => (
+            <NavLink key={path} to={path} className="relative px-6 py-2">
+              {({ isActive }) => (
+                <>
+                  {isActive && (
+                    <motion.div
+                      layoutId="nav-pill"
+                      className="absolute inset-0 rounded-full border"
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 30,
+                        duration: 1,
+                      }}
+                    />
+                  )}
 
-            return (
-              <Link key={path} to={path}>
-                <div
-                  className={`flex items-center gap-2 px-3 py-1 border transition rounded-full ${
-                    isActive
-                      ? "border-aged text-aged"
-                      : "border-transparent hover:border-faded"
-                  }`}
-                >
-                  <Icon size={16} />
-                  <span className="uppercase tracking-wide">{label}</span>
-                </div>
-              </Link>
-            );
-          })}
+                  <motion.span
+                    className={`relative z-10 flex gap-2 items-center ${isActive ? "text-foreground" : ""}`}
+                  >
+                    <Icon size={16} />
+                    {label}
+                  </motion.span>
+                </>
+              )}
+            </NavLink>
+          ))}
         </div>
 
         {/* Mobile Menu Button */}
-        <button
+        <Button
           className="md:hidden border border-faded p-2"
           onClick={() => setOpen(!open)}
         >
           {open ? <X size={18} /> : <Menu size={18} />}
-        </button>
+        </Button>
       </div>
 
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden mt-3 border-t border-faded pt-3 flex flex-col gap-2 text-sm">
-          {NAVICONS.map(({ path, icon: Icon, label }) => {
-            const isActive = location.pathname === path;
+          {NAVICONS.map(({ icon: Icon, label, path }) => (
+            <NavLink
+              key={path}
+              to={path}
+              className="relative px-2 py-2"
+              onClick={() => setOpen(false)}
+            >
+              {({ isActive }) => (
+                <>
+                  {isActive && (
+                    <motion.div
+                      layoutId="nav-pill"
+                      className="absolute inset-0 rounded-full border"
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 30,
+                        duration: 1,
+                      }}
+                    />
+                  )}
 
-            return (
-              <Link key={path} to={path} onClick={() => setOpen(false)}>
-                <div
-                  className={`flex items-center gap-2 px-3 py-2 border rounded-full ${
-                    isActive ? "border-aged text-aged" : "border-transparent"
-                  }`}
-                >
-                  <Icon size={16} />
-                  <span className="uppercase tracking-wide">{label}</span>
-                </div>
-              </Link>
-            );
-          })}
+                  <motion.span
+                    className={`relative z-10 flex gap-2 items-center ${isActive ? "text-foreground" : ""}`}
+                  >
+                    <Icon size={16} />
+                    {label}
+                  </motion.span>
+                </>
+              )}
+            </NavLink>
+          ))}
         </div>
       )}
     </nav>
