@@ -38,13 +38,8 @@ const SearchPage = () => {
   return (
     <div className="min-h-screen w-full text-ink font-serif px-6 pt-24">
       {/* Header */}
-      <div className="max-w-md mx-auto mb-10 border-b border-faded pb-4">
-        <Button
-          onClick={() => navigate("/books")}
-          className="border border-aged bg-transparent hover:bg-aged hover:text-parchment rounded-none mb-6"
-        >
-          ← Return to Archive
-        </Button>
+      <div className="max-w-md mx-auto mb-10 border-b border-faded pb-4 space-y-3">
+        <Button onClick={() => navigate("/books")}>← Back to library</Button>
 
         <h1 className="text-3xl md:text-5xl tracking-wide">Archive Search</h1>
 
