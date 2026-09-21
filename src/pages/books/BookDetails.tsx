@@ -28,7 +28,7 @@ const BookDetails = () => {
   if (noDetails) {
     return (
       <div className="h-screen flex items-center justify-center font-serif text-center">
-        <p>Archive record unavailable.</p>
+        <p>This book is unavailable right now.</p>
       </div>
     );
   }
@@ -36,7 +36,7 @@ const BookDetails = () => {
   if (!fetchedDetails) {
     return (
       <div className="h-screen flex items-center justify-center font-serif">
-        Record not found.
+        We couldn’t find that book.
       </div>
     );
   }
@@ -49,10 +49,10 @@ const BookDetails = () => {
   function handleFavouriteClick() {
     if (bookInFavorites) {
       removeFromFavourites(book.id);
-      toast("Removed from archive");
+      toast("Removed from your saved books");
     } else {
       addTofavourites(book);
-      toast("Saved to archive");
+      toast("Added to your saved books");
     }
   }
 
@@ -66,11 +66,11 @@ const BookDetails = () => {
             size={`lg`}
             onClick={() => navigate(-1)}
           >
-            ← Return
+            ← Back
           </Button>
 
           <p className="text-sm text-faded italic">
-            Record #{book.id} · {book.download_count} accesses
+            Book #{book.id} · {book.download_count} views
           </p>
         </div>
 
@@ -98,7 +98,7 @@ const BookDetails = () => {
             {/* Categories */}
             <div className="mb-6">
               <h2 className="text-sm uppercase tracking-wide mb-2 text-faded">
-                Classification
+                Genres
               </h2>
 
               <div className="flex flex-wrap gap-2">
@@ -113,11 +113,11 @@ const BookDetails = () => {
             {/* Summary */}
             <div>
               <h2 className="text-sm uppercase tracking-wide mb-2 text-faded">
-                Description
+                Summary
               </h2>
 
               <p className="text-sm leading-relaxed whitespace-pre-wrap">
-                {book.summaries || "No description available."}
+                {book.summaries || "No summary available."}
               </p>
             </div>
 
@@ -125,7 +125,7 @@ const BookDetails = () => {
             <div className="flex flex-col md:flex-row items-center gap-3 mt-8">
               <a href={bookUrl} target="_blank" className="">
                 <Button variant={`secondary`} className="border" size={`lg`}>
-                  Read Book →
+                  Read now →
                 </Button>
               </a>
 

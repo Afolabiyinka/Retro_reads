@@ -14,9 +14,9 @@ const Notfound = () => {
       className="h-screen w-full flex flex-col gap-6 justify-center items-center p-3"
     >
       <h1 className="text-7xl font-extrabold">404</h1>
-      <h1 className="text-4xl font-bold text-gray-800">Not found!</h1>
+      <h1 className="text-4xl font-bold text-gray-800">Page not found</h1>
       <p className="flex items-center gap-3 font-semibold md:text-xl tracking-wide truncate">
-        The link is broken or does'nt exist
+        This page doesn’t exist or the link is broken
       </p>
       <Button onClick={() => navigate("/")} size={`lg`}>
         <ArrowLeft className="w-4 h-4" />

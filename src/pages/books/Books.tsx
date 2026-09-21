@@ -20,7 +20,7 @@ const Books = () => {
     return (
       <div className="h-screen flex flex-col  gap-10 items-center justify-center font-serif italic text-aged">
         <Loader />
-        Accessing archive records...
+        Loading books...
       </div>
     );
   }
@@ -29,15 +29,15 @@ const Books = () => {
     return (
       <div className="h-screen w-full flex flex-col items-center justify-center font-serif text-center border border-faded bg-parchment p-6">
         <h1 className="text-2xl md:text-4xl mb-4 text-destructive">
-          Archive Connection Failed
+          We couldn’t load the books
         </h1>
 
         <p className="text-sm text-faded italic mb-6">
-          Unable to retrieve manuscripts at this time
+          Please try again in a moment
         </p>
 
         <Button onClick={() => refetch()} size={`lg`}>
-          Retry Access
+          Try again
         </Button>
       </div>
     );
@@ -47,9 +47,11 @@ const Books = () => {
     <div className="w-full md:w-[85%] mx-auto mt-24 font-serif">
       {/* Page Header */}
       <div className="mb-10 border-b border-faded pb-4 text-center">
-        <h1 className="text-3xl md:text-5xl tracking-wide">Archive Catalog</h1>
+        <h1 className="text-3xl md:text-5xl tracking-wide">
+          Browse the catalog
+        </h1>
         <p className="text-sm text-faded italic mt-2">
-          Collection of preserved literary works
+          A curated collection of classic reads
         </p>
       </div>
 

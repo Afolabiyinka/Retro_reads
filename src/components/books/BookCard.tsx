@@ -37,7 +37,7 @@ const BookCard = ({ book }: BookCardProps) => {
         </p>
 
         {/* Extra archive detail */}
-        <p className="text-xs text-faded">Record #{book.id}</p>
+        <p className="text-xs text-faded">Book #{book.id}</p>
       </div>
     </motion.div>
   );

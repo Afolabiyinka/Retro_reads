@@ -30,7 +30,7 @@ const SearchPage = () => {
   if (noResults) {
     return (
       <div className="h-screen flex items-center justify-center font-serif">
-        Search system unavailable.
+        Search is unavailable right now.
       </div>
     );
   }
@@ -41,10 +41,10 @@ const SearchPage = () => {
       <div className="max-w-md mx-auto mb-10 border-b border-faded pb-4 space-y-3">
         <Button onClick={() => navigate("/books")}>← Back to library</Button>
 
-        <h1 className="text-3xl md:text-5xl tracking-wide">Archive Search</h1>
+        <h1 className="text-3xl md:text-5xl tracking-wide">Find a book</h1>
 
         <p className="text-sm text-faded italic mt-2">
-          Query the literary database
+          Search the catalog for your next read
         </p>
       </div>
 
@@ -57,7 +57,7 @@ const SearchPage = () => {
             <Search />
           </InputGroupAddon>
           <InputGroupInput
-            placeholder="Search archive records..."
+            placeholder="Search by title or author..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
@@ -80,7 +80,7 @@ const SearchPage = () => {
           </div>
         ) : (
           <div className="text-center text-faded italic py-20">
-            No matching records found
+            No books matched your search
           </div>
         )}
       </div>

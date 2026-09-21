@@ -16,12 +16,13 @@ const Home = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2 }}
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 tracking-wide font-bold">
-          The Grand Archive
+        <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6  font-bold">
+          Discover Your Next Read
         </h1>
 
         <p className="text-lg md:text-xl mb-8 max-w-md mx-auto lg:mx-0 italic text-muted-foreground">
-          A curated collection of timeless manuscripts and forgotten literature.
+          A modern collection of classic stories, timeless ideas, and great
+          reads.
         </p>
 
         <Button
@@ -30,12 +31,12 @@ const Home = () => {
           className="border border-aged font-serif hover:bg-primary hover:text-white transition duration-300"
           onClick={() => navigate("/books")}
         >
-          Enter Library →
+          Browse the library →
         </Button>
 
         {/* Extra detail */}
         <p className="mt-6 text-sm text-faded italic">
-          Est. 1892 · Digitally Restored
+          Fresh picks for curious readers
         </p>
       </motion.div>
 

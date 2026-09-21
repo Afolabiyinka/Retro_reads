@@ -15,9 +15,7 @@ const NavBar = () => {
         <Link to={`/`}>
           <div className="flex items-center gap-2 md:gap-3 cursor-pointer">
             <Book className="text-aged" size={18} />
-            <h1 className="text-base md:text-xl tracking-widest">
-              RetroReads Archive
-            </h1>
+            <h1 className="text-base md:text-xl tracking-widest">RetroReads</h1>
           </div>
         </Link>
 
