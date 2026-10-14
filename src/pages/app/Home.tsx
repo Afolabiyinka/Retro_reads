@@ -8,7 +8,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen w-full  text-ink flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 py-12 border border-faded pt-30 ">
+    <div className="min-h-screen w-full max-w-7xl text-ink flex flex-col lg:flex-row items-center justify-center px-2 pt-30 ">
       {/* Text Section */}
       <motion.div
         className="flex-1 text-center lg:text-left mb-10 lg:mb-0 font-serif"
@@ -16,8 +16,8 @@ const Home = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2 }}
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6  font-bold">
-          Discover Your Next Read
+        <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6  font-extrabold">
+          Discover Your <br /> Next Read.
         </h1>
 
         <p className="text-lg md:text-xl mb-8 max-w-md mx-auto lg:mx-0 italic text-muted-foreground">

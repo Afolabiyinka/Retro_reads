@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Book, Menu, X } from "lucide-react";
+import { BookOpen, Menu, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { NAVICONS } from "@/lib/nav";
 import { motion } from "framer-motion";
@@ -9,13 +9,15 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full fixed top-0 z-50 px-4 md:px-10 py-6 font-serif bg-white">
+    <nav className="w-full fixed top-1 z-50 px-4 md:px-10 py-6 font-serif bg-white  md:max-w-7xl">
       <div className="flex justify-between items-center">
         {/* Logo */}
         <Link to={`/`}>
           <div className="flex items-center gap-2 md:gap-3 cursor-pointer">
-            <Book className="text-aged" size={18} />
-            <h1 className="text-base md:text-xl tracking-widest">RetroReads</h1>
+            <BookOpen className="text-aged" size={25} />
+            <h1 className="text-base md:text-xl tracking-tight font-bold">
+              RetroReads
+            </h1>
           </div>
         </Link>
 
@@ -41,7 +43,7 @@ const NavBar = () => {
                   <motion.span
                     className={`relative z-10 flex gap-2 items-center ${isActive ? "text-foreground" : ""}`}
                   >
-                    <Icon size={16} />
+                    <Icon size={20} fill={`${isActive ? "black" : "none"}`} />
                     {label}
                   </motion.span>
                 </>
