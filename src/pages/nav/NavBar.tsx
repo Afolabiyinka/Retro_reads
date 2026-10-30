@@ -43,7 +43,7 @@ const NavBar = () => {
                   <motion.span
                     className={`relative z-10 flex gap-2 items-center ${isActive ? "text-foreground" : ""}`}
                   >
-                    <Icon size={20} fill={`${isActive ? "black" : "none"}`} />
+                    <Icon size={20} weight={isActive ? "fill" : "regular"} />
                     {label}
                   </motion.span>
                 </>

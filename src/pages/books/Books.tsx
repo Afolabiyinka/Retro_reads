@@ -27,7 +27,7 @@ const Books = () => {
 
   if (error) {
     return (
-      <div className="h-screen w-full flex flex-col items-center justify-center font-serif text-center border border-faded bg-parchment p-6">
+      <div className="h-screen w-full flex flex-col items-center justify-center  font-serif text-center border border-faded bg-parchment p-6">
         <h1 className="text-2xl md:text-4xl mb-4 text-destructive">
           We couldn’t load the books
         </h1>
@@ -44,10 +44,10 @@ const Books = () => {
   }
 
   return (
-    <div className="w-full md:w-[85%] mx-auto mt-24 font-serif">
+    <div className="w-full md:w-[85%] mx-auto mt-24 font-serif pt-10">
       {/* Page Header */}
       <div className="mb-10 border-b border-faded pb-4 text-center">
-        <h1 className="text-3xl md:text-5xl tracking-wide">
+        <h1 className="text-3xl md:text-5xl tracking-wide font-bold">
           Browse the catalog
         </h1>
         <p className="text-sm text-faded italic mt-2">

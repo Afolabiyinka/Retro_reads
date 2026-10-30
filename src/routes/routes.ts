@@ -32,7 +32,7 @@ export const routes: RouteObject[] = [
         Component: SearchPage,
       },
       {
-        path: "book/:id",
+        path: "books/:id",
         Component: BookDetails,
       },
       {

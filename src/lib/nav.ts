@@ -1,24 +1,30 @@
-import { Bookmark, House, Library, Search } from "lucide-react";
+
+import {
+  HouseIcon,
+  BooksIcon,
+  MagnifyingGlassIcon,
+  BookmarkSimpleIcon,
+} from "@phosphor-icons/react";
 
 const NAVICONS = [
   {
     path: "/",
-    icon: House,
+    icon: HouseIcon,
     label: "Home",
   },
   {
     path: "/books",
-    icon: Library,
+    icon: BooksIcon,
     label: "Library",
   },
   {
     path: "/search",
-    icon: Search,
+    icon: MagnifyingGlassIcon,
     label: "Search",
   },
   {
     path: "/favourites",
-    icon: Bookmark,
+    icon: BookmarkSimpleIcon,
     label: "Saved",
   },
 ];
